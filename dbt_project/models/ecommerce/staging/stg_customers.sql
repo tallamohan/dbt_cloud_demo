@@ -21,8 +21,8 @@ renamed as (
 		age,
 		name,
 		email,
-		created_at,
-		updated_at,
+		CAST(created_at as timestamp) as created_at,
+        CAST(updated_at as timestamp) as updated_at,
 		_airbyte_extracted_at
 
 	from source
