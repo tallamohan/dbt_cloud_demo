@@ -1,0 +1,14 @@
+dbt_project:
+  outputs:
+    dev:
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      threads: 4
+      type: teradata
+      host: rtmm-tdvm-smp-3623 # Update this field with your teradata instance hostname
+      schema: airbyte
+      tmode: ANSI
+      logmech: TD2
+      username: dbc # Update this field with your teradata instance database name
+      password: dbc # Update this field with your teradata instance password
+  target: dev
