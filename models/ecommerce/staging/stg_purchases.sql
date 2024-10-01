@@ -1,24 +1,38 @@
-{{ 
+{{
     config(
         materialized="table"
-    ) 
+    )
 }}
-WITH source AS (
-    SELECT * FROM {{ ref('raw_purchases') }}
+with source as (
+
+    select * from {{ ref('raw_purchases') }}
+
 ),
-renamed AS (
-    SELECT
+
+renamed as (
+
+    select
         id,
         user_id,
         product_id,
-        purchased_at,
-        returned_at,
-        created_at,
-        updated_at,
-        added_to_cart_at,
-        _airbyte_extracted_at
-    FROM source
-)
-SELECT * FROM renamed
 
- 
+        CASE 
+            when purchased_at IS Null or purchased_at = 'None' then Null
+            else CAST(purchased_at AS timestamp)
+        END as purchased_at,
+
+        CASE 
+            when returned_at IS Null or returned_at = 'None' then Null
+            else CAST(returned_at AS timestamp)
+        END as returned_at,
+
+        CAST (created_at  AS timestamp) as created_at,
+         CAST (updated_at  AS timestamp) as updated_at,
+        CAST(added_to_cart_at as timestamp) as added_to_cart_at,
+        _airbyte_extracted_at
+
+    from source
+
+)
+
+select * from renamed
