@@ -52,11 +52,11 @@ models:
             tests:
                 - not_null
           - name: purchased_at
-          - name: returned_at
+          - name: cancelled_at
           - name: created_at
             tests:
                 - not_null
-          - name: added_to_cart_at
+          - name: booked_at
           - name: _airbyte_extracted_at
             tests:
                 - not_null

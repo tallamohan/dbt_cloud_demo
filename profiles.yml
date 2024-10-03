@@ -5,10 +5,10 @@ dbt_project:
       job_retries: 1
       threads: 4
       type: teradata
-      host: server_name # Update this field with your teradata instance hostname
-      schema: 
+      host: sdt47039.labs.teradata.com # Update this field with your teradata instance hostname
+      schema: automobile_business
       tmode: ANSI
       logmech: TD2
-      username:  # Update this field with your teradata instance database name
-      password:  # Update this field with your teradata instance password
+      username:  mt255026
+      password:  mt255026
   target: dev

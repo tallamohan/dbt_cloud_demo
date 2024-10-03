@@ -24,11 +24,11 @@ renamed as (
         CASE 
             when returned_at IS Null or returned_at = 'None' then Null
             else CAST(returned_at AS timestamp)
-        END as returned_at,
+        END as cancelled_at,
 
         CAST (created_at  AS timestamp) as created_at,
          CAST (updated_at  AS timestamp) as updated_at,
-        CAST(added_to_cart_at as timestamp) as added_to_cart_at,
+        CAST(added_to_cart_at as timestamp) as booked_at,
         _airbyte_extracted_at
 
     from source

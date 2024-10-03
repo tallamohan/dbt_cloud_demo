@@ -1,4 +1,4 @@
-# Ecommerce Data:
+# Automobile Business Data:
 
 The dbt project converts raw data from an app database into a dimensional model, preparing customer and purchase data for analytics. 
 The data pipeline is composed of multiple stages, beginning with the ingestion of raw data through dbt seed.

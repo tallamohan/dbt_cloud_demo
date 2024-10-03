@@ -24,7 +24,7 @@ models:
           - name: product_id
             tests:
                 - not_null
-          - name: added_to_cart_at
+          - name: booked_at
             tests:
                 - not_null
 
