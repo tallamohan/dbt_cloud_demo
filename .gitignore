@@ -3,8 +3,3 @@ target/
 dbt_packages/
 logs/
 .env/
-.idea/dbt_cloud_demo.iml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
