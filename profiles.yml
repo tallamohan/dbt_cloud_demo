@@ -6,7 +6,7 @@ dbt_project:
       threads: 4
       type: teradata
       host: server_name # Update this field with your teradata instance hostname
-      schema:
+      schema: 
       tmode: ANSI
       logmech: TD2
       username:  # Update this field with your teradata instance database name
